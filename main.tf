@@ -48,7 +48,7 @@ resource "aws_instance" "chef-server" {
 
   # install the set of cookbooks and create a repository
   provisioner "local-exec" {
-    command = "chef install ${path.module}/Policyfile.rb && chef export ${path.module}/Policyfile.rb cookbooks -f"
+    command = "chef install ${path.module}/Policyfile.rb && chef export ${path.module}/Policyfile.rb ${path.module}/cookbooks -f"
   }
 
   provisioner "file" {

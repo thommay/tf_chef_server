@@ -1,7 +1,7 @@
 {
   "chef-server": {
     "accept_license": "true",
-    "addons": [${addons}],
+    "addons": ${jsonencode(addons)},
     "topology": "standalone",
     "version": "${version}"
   }
