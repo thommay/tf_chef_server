@@ -10,7 +10,7 @@ name "chef_server"
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list "chef-server::default"
+run_list "chef-server::default", "chef-server::addons"
 
 # Specify a custom source for a single cookbook:
 # cookbook "example_cookbook", path: "../cookbooks/example_cookbook"

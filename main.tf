@@ -2,7 +2,7 @@ data "template_file" "dna-json" {
   template = "${file("${path.module}/templates/dna-json.tpl")}"
 
   vars {
-    addons  = "${join(",", formatlist("\\"%s\\"", split(",", var.chef_server_addons)))}"
+    addons = "${jsonencode(zipmap(split(",", var.chef_server_addons), split(",", var.chef_server_addvers)))}"
     version = "${var.chef_server_version}"
   }
 }
