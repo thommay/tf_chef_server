@@ -28,7 +28,7 @@ Terraform module to create a Chef Server.
   * chef\_server\_user\_password - The password of the chef admin user
   * chef\_server\_org\_name - The name of the chef organization
   * chef\_server\_user\_full\_name - The display name of the chef organization
-  * chef\_server\_addons - A comma separated string of chef server addons
+  * chef\_server\_addons - A map of addon = version
   
 ## Example
 
@@ -47,7 +47,8 @@ module "tf_chef_server" {
   ssh_user                   = "ubuntu"
 
   chef_server_version        = "12.9.1"
-  chef_server_addons         = "manage,reporting"
+  chef_server_addons         = { "manage" = "2.5.4","reporting" =
+  "1.7.5" }
   chef_server_user           = "admin"
   chef_server_user_full_name = "Admin User"
   chef_server_user_email     = "Admin@example.com"

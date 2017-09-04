@@ -65,10 +65,6 @@ variable "chef_server_org_full_name" {
 
 variable "chef_server_addons" {
   description = "A comma separated string of chef server addons"
-  default     = ""
-}
-
-variable "chef_server_addvers" {
-  description = "A comma separated string of chef server addon versions"
-  default     = ""
+  type = "map"
+  default     = {}
 }
